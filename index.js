@@ -43,7 +43,20 @@ const promptUser = () => {
       }
     },
 
-
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Project description (required):',
+      validate: titleInput => {
+        titleInput = titleInput.trim();
+        if (titleInput) {
+          return true;
+        } else {
+          console.log('Please provide a short description of your project:');
+          return false;
+        }
+      }
+    },
 
 
 
@@ -53,14 +66,15 @@ const promptUser = () => {
   ])
 };
 
-
+// comment out for test
     promptUser()
       .then(answers => {
         markdownString = generateMarkdown(answers)
         writeFile(markdownString);
       });
         
- 
+// markdownString = generateMarkdown(testAnswers)
+// writeFile(markdownString);
 
 
       
