@@ -6,7 +6,7 @@ const outputFileName = 'README.md'
 let markdownString = '';
 
 //////////////////////////////////////////////
-// function writeFile
+// FUNCTION writeFile
 // writes fileContent string to ./dist/outputFileName
 ///////////////////////////////////////////////
 const writeFile = fileContent => {
@@ -24,7 +24,7 @@ const writeFile = fileContent => {
   });
 };
 //////////////////////////////////////////////////////
-// Inquirer Question Function
+// INQUIRER Question Function
 /////////////////////////////////////////////////////
 const promptUser = () => {
   return inquirer.prompt([
@@ -42,6 +42,14 @@ const promptUser = () => {
         }
       }
     },
+
+
+
+
+
+
+
+    
   ])
 };
 
