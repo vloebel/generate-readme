@@ -95,21 +95,18 @@ const promptUser = () => {
       message: 'Would you like to add your email?',
       default: true,
     },
-    
     {
       type: 'input',
       name: 'email',
       message: 'Enter your contact email:',
       when: ({ confirmEmail }) => confirmEmail
     },
-    
     {
       type: 'list',
       name: 'license',
       message: "Use arrow keys to select project license:",
       choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ]
     },
-    
   ])
 };
 
