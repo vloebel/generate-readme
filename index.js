@@ -82,9 +82,37 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: "Use arrow keys to select project license:",
-      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ],
-  }
+      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ]
+    },
 
+    {
+      type: 'input',
+      name: 'userName',
+      message: 'GitHub user name (required):',
+      validate: userNameInput => {
+        userNameInput = userNameInput.trim();
+        if (userNameInput) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+    type: 'confirm',
+    name: 'confirmEmail',
+    message: 'Would you like to add your email?',
+    default: true,
+    },
+  
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Enter your contact email:',
+      when: ({ confirmEmail }) => confirmEmail
+    }
+    
+    
   ])
 };
 

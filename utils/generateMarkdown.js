@@ -9,6 +9,8 @@ const selectedLicense = {
   badgeMarkdown: '',
   licenseMarkdown: '',
 }
+let contactMarkdown = '';
+let linkedToc = '';
 
 
 ////////////////////////////////////////
@@ -78,21 +80,52 @@ const generateLicenseMarkdown = (license) => {
       `;
   }
 }
+const generateContactMarkdown=(user, email, project_title) => {
+  contactMarkdown = `For more information, contact  `;
+  let contactLink = `* [${user} on GitHub](https://github.com/${user})  `;
+  let contactEmail = '';
+  if (email) {
+    contactEmail = `* [${email}](mailto:${email})`;
+  }
+  contactMarkdown = `${contactMarkdown}
+  ${contactLink}
+  ${contactEmail}`;
+      
+}
 
+ generateLinkedToc = (license) => {
+  linkedToc = `** Contents **  
+* Description
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Test Cases](#Test)
+* [Questions  `;
+  
+  if (license) {
+    linkedToc = `${linkedToc}  
+* License` ;
+  }
+  contactMarkdown = `${contactMarkdown}
+  ${contactLink}
+  ${contactEmail}`;
 ////////////////////////////////////////
 // FUNCTION generateMarkdown (data)
 // Builds the README markdown using the 
 // answer data object
 ////////////////////////////////////////
 const generateMarkdown = (data) => {
-  console.log('loading....')
+
   loadSelectedLicense(data.license);
-  console.log('marking....')
+ 
   generateLicenseMarkdown(data.license);
+
+  generateContactMarkdown(data.userName, data.email, data.title);
+  generateLinkedToc(data.license)
   return `
   ${selectedLicense.badgeMarkdown}
-  # ${data.title} 
-  ## Description  
+  # ${data.title}
+  ## Description 
   ${data.description}
   ## Installation Instructions  
   ${data.install}
@@ -102,10 +135,9 @@ const generateMarkdown = (data) => {
   ${data.contributors}
   ## Test Cases  
   ${data.tests}
+  ## Questions
+  ${contactMarkdown}
   ${selectedLicense.licenseMarkdown}
-
-
-
 
 
 `;

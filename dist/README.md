@@ -1,19 +1,23 @@
 
-  [![License: GPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-  # g2 
+  [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+  # asdf 
   ## Description  
-  g2
+  asdf
   ## Installation Instructions  
-  g2
+  asdf
   ## Usage  
-  g2
+  asdf
   ## Contributors  
-  g2
+  asdf
   ## Test Cases  
-  g2
+  asdf
   ## License
-  This software is distrubted without warranty under the GNU GPL v3 license agreement. To view terms and conditions, visit the [GNU GPL v3 License website](https://www.gnu.org/licenses/gpl-3.0).
+  This software is distrubted without warranty under the GNU GPL v2 license agreement. To view terms and conditions, visit the [GNU GPL v2 License website](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
       
+  ## Questions
+  For more information, contact  
+  * [vloebel on GitHub](https://github.com/vloebel)  
+  * [vloebel@hotmail.com](mailto:vloebel@hotmail.com)
 
 
 
