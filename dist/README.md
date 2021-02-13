@@ -2,7 +2,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   # Outstanding README Generator
   ## Description  
-  This project prompts for information that belongs in a a project readme, and outputs the corresponding README.md file.  Sections include an optional choice of licenses, installation instructions, ways to contribute to the project, test cases, and contact information for questions.
+  This project prompts for information that belongs in a project readme, and outputs the corresponding README.md file.  Sections include an optional choice of licenses, installation instructions, ways to contribute to the project, test cases, and contact information for questions.
   ## Table of Contents  
    * [Installation](#Installation)  
   * [Usage](#Usage)  
@@ -15,7 +15,7 @@
   ## Usage  
   TO RUN  - type "node index" on the terminal command line. YOU MUST HAVE AN EXISTING FOLDER named "dist" for the output README.md file
   ## Contributing  
-  TO CONTRIBUTE  - STAR this GitHub repository! Areas for expansion include prompting for bullet points, numbered steps, and images, as well as and validating github links and email.
+  TO CONTRIBUTE  - STAR this GitHub repository! Areas for expansion include prompting for bullet points, numbered steps, and images, as well as validating github links and email.
   ## Testing  
   TEST CASES include at least three license options and their generated links (including "None") as well as running the generator with and without contact email information.
   ## Questions
