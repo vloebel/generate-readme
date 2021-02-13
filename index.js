@@ -69,8 +69,8 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'contributors',
-      message: 'List contributors:',
+      name: 'contributing',
+      message: 'How can the community contribute to this project?',
     },
     {
       type: 'input',
@@ -78,13 +78,7 @@ const promptUser = () => {
       message: 'Test Cases:',
     },
 
-    {
-      type: 'list',
-      name: 'license',
-      message: "Use arrow keys to select project license:",
-      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ]
-    },
-
+    
     {
       type: 'input',
       name: 'userName',
@@ -99,19 +93,25 @@ const promptUser = () => {
       }
     },
     {
-    type: 'confirm',
-    name: 'confirmEmail',
-    message: 'Would you like to add your email?',
-    default: true,
+      type: 'confirm',
+      name: 'confirmEmail',
+      message: 'Would you like to add your email?',
+      default: true,
     },
-  
+    
     {
       type: 'input',
       name: 'email',
       message: 'Enter your contact email:',
       when: ({ confirmEmail }) => confirmEmail
-    }
+    },
     
+    {
+      type: 'list',
+      name: 'license',
+      message: "Use arrow keys to select project license:",
+      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ]
+    },
     
   ])
 };

@@ -130,7 +130,7 @@ const generateMarkdown = (data) => {
   ## Usage  
   ${data.usage}
   ## Contributing  
-  ${data.contributors}
+  ${data.contributing}
   ## Testing  
   ${data.tests}
   ## Questions
