@@ -93,53 +93,54 @@ const generateContactMarkdown=(user, email, project_title) => {
       
 }
 
- generateLinkedToc = (license) => {
-  linkedToc = `** Contents **  
-* Description
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Contributing](#Contributing)
-* [Test Cases](#Test)
-* [Questions  `;
+// generateLinkedToc = (license) => {
+//   linkedToc = `** Contents **  
+// * Description
+// * [Installation](#Installation)
+// * [Usage](#Usage)
+// * [Contributing](#Contributing)
+// * [Test Cases](#Test)
+// * [Questions  `;
   
-  if (license) {
-    linkedToc = `${linkedToc}  
-* License` ;
-  }
-  contactMarkdown = `${contactMarkdown}
-  ${contactLink}
-  ${contactEmail}`;
+//   if (license) {
+//     linkedToc = `${linkedToc}  
+// * License` ;
+//   }
+// }
+
 ////////////////////////////////////////
 // FUNCTION generateMarkdown (data)
 // Builds the README markdown using the 
 // answer data object
 ////////////////////////////////////////
+
 const generateMarkdown = (data) => {
-
   loadSelectedLicense(data.license);
- 
   generateLicenseMarkdown(data.license);
-
   generateContactMarkdown(data.userName, data.email, data.title);
-  generateLinkedToc(data.license)
+  // generateLinkedToc(data.license); //maybe
   return `
   ${selectedLicense.badgeMarkdown}
   # ${data.title}
-  ## Description 
+  ## Description  
   ${data.description}
+  ## Table of Contents  
+  * [Installation](#Installation)  
+  * [Usage](#Usage)  
+  * [Contributing](#Contributing)  
+  * [Test Cases](#Testing) 
+  * [Questions](#Questions) 
   ## Installation Instructions  
   ${data.install}
   ## Usage  
   ${data.usage}
-  ## Contributors  
+  ## Contributing  
   ${data.contributors}
-  ## Test Cases  
+  ## Testing  
   ${data.tests}
   ## Questions
   ${contactMarkdown}
   ${selectedLicense.licenseMarkdown}
-
-
 `;
 }
 
