@@ -2,7 +2,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const outputFileName = 'README.md'
-// let markdownString = '';
+let stringToWrite = '';
 
 //////////////////////////////////////////////
 // FUNCTION writeFile
@@ -114,12 +114,11 @@ const promptUser = () => {
 
     promptUser()
       .then(answers => {
-       Let markdownString = generateMarkdown(answers)
+        stringToWrite = generateMarkdown(answers)
         console.log('writing....')
-        writeFile(markdownString);
+        writeFile(stringToWrite);
       });
         
-
 
 
       
