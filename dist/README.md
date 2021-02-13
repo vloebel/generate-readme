@@ -1,5 +1,5 @@
 
-  [![License: GPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   # Outstanding README Generator
   ## Description  
   This project prompts for information that belongs in a a project readme, and outputs the corresponding README.md file.  Sections include an optional choice of licenses, installation instructions, ways to contribute to the project, test cases, and contact information for questions.
@@ -23,5 +23,5 @@
   * [vloebel on GitHub](https://github.com/vloebel)  
   * [vickyloebel@gmail.com](mailto:vickyloebel@gmail.com)
   ## License
-  This software is distrubted without warranty under the GNU GPL v3 license agreement. To view terms and conditions, visit the [GNU GPL v3 License website](https://www.gnu.org/licenses/gpl-3.0).
+  This software is distrubted without warranty under the MIT license agreement. To view terms and conditions, visit the [MIT License website](https://opensource.org/licenses/MIT).
       
