@@ -1,27 +1,10 @@
-const fs = require('fs');
+
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
-const outputFileName = 'README.md'
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeFile = require('./utils/fileio.js');
+const outputFileName = 'README.md';
 let stringToWrite = '';
 
-//////////////////////////////////////////////
-// FUNCTION writeFile
-// writes fileContent string to ./dist/outputFileName
-///////////////////////////////////////////////
-const writeFile = fileContent => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(`./dist/${outputFileName}`, fileContent, err => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve({
-        ok: true,
-        message: `${outputFileName} created in ./dist folder`
-      });
-    });
-  });
-};
 //////////////////////////////////////////////////////
 // INQUIRER Question Promise
 /////////////////////////////////////////////////////
@@ -105,21 +88,16 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: "Use arrow keys to select project license:",
-      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ]
+      choices: ['None', 'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT', 'Mozilla 2.0',]
     },
   ])
 };
 
 ////////////////////////////////////////////
 
-    promptUser()
-      .then(answers => {
-        stringToWrite = generateMarkdown(answers)
-        console.log('writing....')
-        writeFile(stringToWrite);
-      });
-        
+promptUser()
+  .then(answers => {
+    stringToWrite = generateMarkdown(answers)
+    writeFile(stringToWrite, outputFileName);
+  });
 
-
-      
-      
