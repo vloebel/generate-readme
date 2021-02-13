@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const outputFileName = 'README.md'
-let markdownString = '';
+// let markdownString = '';
 
 //////////////////////////////////////////////
 // FUNCTION writeFile
@@ -24,7 +23,7 @@ const writeFile = fileContent => {
   });
 };
 //////////////////////////////////////////////////////
-// INQUIRER Question Function
+// INQUIRER Question Promise
 /////////////////////////////////////////////////////
 const promptUser = () => {
   return inquirer.prompt([
@@ -60,7 +59,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'install',
-      message: 'Installation instructions:',
+      message: 'Installation:',
     },
     {
       type: 'input',
@@ -77,8 +76,6 @@ const promptUser = () => {
       name: 'tests',
       message: 'Test Cases:',
     },
-
-    
     {
       type: 'input',
       name: 'userName',
@@ -120,7 +117,7 @@ const promptUser = () => {
 
     promptUser()
       .then(answers => {
-        markdownString = generateMarkdown(answers)
+       Let markdownString = generateMarkdown(answers)
         console.log('writing....')
         writeFile(markdownString);
       });
