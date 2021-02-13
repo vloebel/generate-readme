@@ -1,6 +1,4 @@
 
-
-
 // Holds the license badge & url strings
 // and information section markdown string
 const selectedLicense = {

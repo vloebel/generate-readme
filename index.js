@@ -17,9 +17,9 @@ const writeFile = fileContent => {
       }
       resolve({
         ok: true,
-        message: `${outputFileName} created in ./dist folder`
       });
     });
+    console.log(`${outputFileName} created in ./dist folder`);
   });
 };
 //////////////////////////////////////////////////////
@@ -115,7 +115,6 @@ const promptUser = () => {
     promptUser()
       .then(answers => {
         stringToWrite = generateMarkdown(answers)
-        console.log('writing....')
         writeFile(stringToWrite);
       });
         
