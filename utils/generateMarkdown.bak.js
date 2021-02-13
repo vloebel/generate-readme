@@ -10,7 +10,7 @@ const selectedLicense = {
   licenseMarkdown: '',
 }
 let contactMarkdown = '';
-let tocMarkdown = '';
+let linkedToc = '';
 
 
 ////////////////////////////////////////
@@ -93,19 +93,20 @@ const generateContactMarkdown=(user, email, project_title) => {
       
 }
 
-generateTocMarkdown = (license) => {
-  tocMarkdown = 
-` * [Installation](#Installation)  
-  * [Usage](#Usage)  
-  * [Contributing](#Contributing)  
-  * [Testing](#Testing) 
-  * [Questions](#Questions)  `
-  if ((license) && (!(license=='None'))){
-    // console.log("adding license to tocMarkdown");
-    tocMarkdown = `${tocMarkdown}  
-  * [License](#License)` ;
-  }
-}
+// generateLinkedToc = (license) => {
+//   linkedToc = `** Contents **  
+// * Description
+// * [Installation](#Installation)
+// * [Usage](#Usage)
+// * [Contributing](#Contributing)
+// * [Test Cases](#Test)
+// * [Questions  `;
+  
+//   if (license) {
+//     linkedToc = `${linkedToc}  
+// * License` ;
+//   }
+// }
 
 ////////////////////////////////////////
 // FUNCTION generateMarkdown (data)
@@ -117,15 +118,19 @@ const generateMarkdown = (data) => {
   loadSelectedLicense(data.license);
   generateLicenseMarkdown(data.license);
   generateContactMarkdown(data.userName, data.email, data.title);
-  generateTocMarkdown(data.license); 
+  // generateLinkedToc(data.license); //maybe
   return `
   ${selectedLicense.badgeMarkdown}
   # ${data.title}
   ## Description  
   ${data.description}
   ## Table of Contents  
-  ${tocMarkdown}
-  ## Installation  
+  * [Installation](#Installation)  
+  * [Usage](#Usage)  
+  * [Contributing](#Contributing)  
+  * [Test Cases](#Testing) 
+  * [Questions](#Questions) 
+  ## Installation Instructions  
   ${data.install}
   ## Usage  
   ${data.usage}
