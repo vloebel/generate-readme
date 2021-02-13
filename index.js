@@ -57,24 +57,47 @@ const promptUser = () => {
         }
       }
     },
+    {
+      type: 'input',
+      name: 'install',
+      message: 'Installation instructions:',
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Usage:',
+    },
+    {
+      type: 'input',
+      name: 'contributors',
+      message: 'List contributors:',
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: 'Test Cases:',
+    },
 
+    {
+      type: 'list',
+      name: 'license',
+      message: "Use arrow keys to select project license:",
+      choices: ['None',  'Apache 2.0', 'GNU GPL v2', 'GNU GPL v3', 'MIT','Mozilla 2.0', ],
+  }
 
-
-
-
-    
   ])
 };
 
-// comment out for test
+////////////////////////////////////////////
+
     promptUser()
       .then(answers => {
         markdownString = generateMarkdown(answers)
+        console.log('writing....')
         writeFile(markdownString);
       });
         
-// markdownString = generateMarkdown(testAnswers)
-// writeFile(markdownString);
+
 
 
       
